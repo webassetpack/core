@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "description": "Web Asset Packs",
   "main": "lib/api.js",
+  "types": "lib/api.d.ts",
   "scripts": {
     "build": "npm run lint && tsc",
     "lint": "node ./node_modules/.bin/eslint --ext .ts '?(src|spec)/**/*.ts' --cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run-script lint && nyc --reporter=lcov --reporter=text node -r ts-node/register ./spec/support/jasmine.ts"
   },
   "keywords": [
     "web",
@@ -24,6 +25,7 @@
     "@typescript-eslint/parser": "2.29.0",
     "eslint": "6.8.0",
     "jasmine-spec-reporter": "5.0.1",
+    "nyc": "15.0.1",
     "ts-node": "8.9.0",
     "typescript": "3.8.3"
   },
