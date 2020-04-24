@@ -8,10 +8,14 @@ class TestPlugin extends WAPPlugin {
 }
 
 describe('WAPPlugin', () => {
-    let plugin: WAPPlugin = new TestPlugin();
+    let plugin: WAPPlugin = new TestPlugin({test:true});
 
     it('getName() should return constructor name', () => {
         expect(plugin.getName()).toBe('TestPlugin');
+    });
+
+    it('getOptions()', () => {
+        expect(plugin.getOptions()).toEqual({test:true});
     });
 
     it('read() should invoke _read', () => {
