@@ -9,6 +9,11 @@
     "lint": "node ./node_modules/.bin/eslint --ext .ts '?(src|spec)/**/*.ts' --cache",
     "test": "npm run-script lint && nyc --reporter=lcov --reporter=text node -r ts-node/register ./spec/support/jasmine.ts"
   },
+  "homepage": "https://github.com/webassetpack/core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webassetpack/core.git"
+  },
   "keywords": [
     "web",
     "asset",
@@ -16,7 +21,7 @@
     "pack"
   ],
   "author": "norman@normanbreau.com",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@breautek/jasmine": "3.5.1",
     "@totalpave/eslint-plugin": "3.0.1",
