@@ -2,7 +2,7 @@
 import {WAPPlugin} from '../src/WAPPlugin';
 
 class TestPlugin extends WAPPlugin {
-    protected async _read(data: Uint8Array): Promise<any> {
+    protected async _read(data: Uint8Array, type: string): Promise<any> {
         return;
     }
 }
@@ -22,6 +22,6 @@ describe('WAPPlugin', () => {
         let spy: jasmine.Spy = spyOn<any>(plugin, '_read');
         let data: Uint8Array = new Uint8Array();
         plugin.read(data);
-        expect(spy).toHaveBeenCalledWith(data);
+        expect(spy).toHaveBeenCalledWith(data, 'application/octet-stream');
     });
 });
